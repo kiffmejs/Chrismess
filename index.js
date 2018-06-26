@@ -6,6 +6,8 @@ const changeHeading = function(ev) {
   const flickName = f.flickName.value
   const flicksDiv = document.querySelector("#flicks")
   flicksDiv.innerHTML += `<p>${flickName}</p>`
+
+  f.reset()
 }
 
 form.addEventListener('submit', changeHeading)
