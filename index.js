@@ -1,6 +1,6 @@
 const form = document.querySelector('form#flickForm')
 
-const changeHeading = function(ev) {
+const movieSubmit = function(ev) {
   ev.preventDefault()
   const f = ev.target
   const flickName = f.flickName.value
@@ -12,7 +12,7 @@ const changeHeading = function(ev) {
   f.reset()
 }
 
-form.addEventListener('submit', changeHeading)
+form.addEventListener('submit', movieSubmit)
 
 
 
