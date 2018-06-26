@@ -14,5 +14,15 @@ const movieSubmit = function(ev) {
 
 form.addEventListener('submit', movieSubmit)
 
+const tvSubmit = function (ev){
+  ev.preventDefault()
+  const t = ev.target
+  const tvShow = t.tvShow.value
+  const item = document.createElement('li')
+  item.textContent = tvShow
+  const list = document.querySelector ("#flicks")
+  tvlist.appendChild(item2)
+}
 
+form.addEventListener('submit', tvSubmit)
 
