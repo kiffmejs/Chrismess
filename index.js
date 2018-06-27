@@ -7,10 +7,28 @@ const renderProperty = function (name, value) {
   return Span
 }
 
+const renderItem = function(flick) {
+  const item = document.createElement ('li')
+  item.classList.add('flick')
+
+  const properties = object.keys(flick)
+  properties.forEach(function(propertyName){
+    const span = renderProperty(propertyName, flick[propertyName])
+    item.appendChild(span)
+  })
+
+  return item
+
+}
+
 const movieSubmit = function(ev) {
   ev.preventDefault()
   const f = ev.target
 
+const flick = {
+  name: f.flickName.value,
+  year: f.flickYear.value,
+}
 
   const flickSpan = renderProperty('name', f.flickName.value)
   const yearSpan = renderProperty('year', f.flickYear.value)
