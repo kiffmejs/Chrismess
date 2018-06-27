@@ -4,21 +4,23 @@
 body {
     font-family: Soource Code Pro, Helvetica, Arial, sans-serif;
     text-align: left;
+    background-color: lightskyblue
 }
 
 h1 {
     font-family: Source Code Pro;
     text-align: left;
     font-size: 8vw;
-    color: crimson
+    color:crimson;
 
 }
 
 h2 {
     font-size: 4vw;
-    color: grey;
+    color: crimson;
 }
 
 .year {
     display: block;
 }
+
