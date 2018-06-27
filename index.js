@@ -1,18 +1,19 @@
 const form = document.querySelector('form#flickForm')
 
+const renderProperty = function (name, value) {
+  const Span = document.createElement('span')
+  Span.classList.add(name)
+  Span.textContent = value
+  return Span
+}
+
 const movieSubmit = function(ev) {
   ev.preventDefault()
   const f = ev.target
 
-  const flickName = f.flickName.value
-  const flickSpan = document.createElement('span')
-  flickSpan.classList.add('name')
-  flickSpan.textContent = flickName
 
-  const flickYear = f.flickYear.value
-  const yearSpan = document.createElement('span')
-  flickSpan.classList.add('year')
-  yearSpan.textContent = flickYear
+  const flickSpan = renderProperty('name', f.flickName.value)
+  const yearSpan = renderProperty('year', f.flickYear.value)
 
   const item = document.createElement ('li')
   item.classList.add('flick')
