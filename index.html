@@ -8,10 +8,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 <body>
+  <header>
 <h1>Chrismess</h1>
-
-<br>
-<br>
+<h2>Enter a Chris Movie</h2>
+</header>
 <form id= "flickForm">
   <input type="text" 
   name="flickName" 
@@ -20,13 +20,19 @@
   >
   <br>
   <br>
+
   <input type="text"
-  name= "tvShow"
-  placeholder="Enter a TV Show">
+  class="Smaller"
+  name="flickYear"
+  placeholder="Year Published"
+  >
+  <br>
+  <br>
   <button type="submit">Submit</button>
 </form>
 
 <ul id="flicks"></ul>
+
 
   <script src="index.js"></script>
 </body>
