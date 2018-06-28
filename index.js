@@ -14,7 +14,32 @@ class App {
     Span.textContent = value
     return Span
   }
+
+  renderActionButtons (flick, item) {
+    const actions = document.createElement('div')
+    actions.classList.add('actions')
+
+    const deleteButton = document.createElement('button')
+    deleteButton.classList.add('remove')
+      deleteButton.textContent = 'Delete'
+      deleteButton
+      .addEventListener (
+        'click',
+         (_ev) => this.removeFlick(flick, item)
+        )
+      actions.appendChild(deleteButton)
+
+      const favButton = document.createElement('button')
+      favButton.classList.add('fav')
+      favButton.textContent = 'Favorite'
+      favButton.addEventListener('click', (_ev) => this.toggleFavorite(flick, item)
+      )
+      actions.appendChild(favButton)
+
   
+    return actions
+  }
+
   renderItem(flick) {
     const item = document.createElement ('li')
     item.classList.add('flick')
@@ -26,24 +51,6 @@ class App {
       item.appendChild(span)
     })
 
-      const deleteButton = document.createElement('button')
-      deleteButton.textContent = 'Delete'
-      deleteButton
-      .addEventListener (
-        'click',
-         (_ev) => this.removeFlick(flick, item)
-        )
-      item.appendChild(deleteButton)
-
-      const favButton = document.createElement('button')
-      favButton.textContent = 'Favorite'
-      favButton.addEventListener('click', (_ev) => this.toggleFavorite(flick, item)
-      )
-      item.appendChild(favButton)
-
-  
-    return item
-  }
 
   toggleFavorite(flick, item) {
     flick.favorite = item.classList.toggle('fav')
