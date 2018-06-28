@@ -40,9 +40,9 @@ class App {
     return actions
   }
 
-  renderItem(flick) {
-     const item = document.createElement('li')
-     item.classList.add('flick')
+  renderProperties(flick, item) {
+     const div = document.createElement('div')
+     div.classList.add('info')
     
     
      const properties = Object.keys(flick)
@@ -50,8 +50,18 @@ class App {
      properties.forEach((propertyName) => {
    
      const span = this.renderProperty(propertyName, flick[propertyName])
-          item.appendChild(span)
+          div.appendChild(span)
         })
+
+        return div
+      }
+
+      renderItem(flick) {
+        const item = document.createElement('li')
+        item.classList.add('flick')
+
+        const properties = this.renderProperties(flick, item)
+        item.appendChild(properties)
    
      const actions = this.renderActionButtons(flick, item)
      item.appendChild(actions)
