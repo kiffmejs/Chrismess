@@ -27,6 +27,9 @@ h2 {
 .fav {
     background-color: rgb(233, 205, 44);
 }
+.favorite{
+    display: none;
+}
 
 .remove {
     background-color: crimson;
