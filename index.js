@@ -37,7 +37,7 @@ class App {
 
       const favButton = document.createElement('button')
       favButton.textContent = 'Favorite'
-      favButton.addEventListener('click', (_ev) => this.toggleFavorite(flick)
+      favButton.addEventListener('click', (_ev) => this.toggleFavorite(flick, item)
       )
       item.appendChild(favButton)
 
@@ -45,8 +45,8 @@ class App {
     return item
   }
 
-  toggleFavorite(flick) {
-    flick.favorite = !flick.favorite
+  toggleFavorite(flick, item) {
+    flick.favorite = item.classList.toggle('fav')
   }
 
   removeFlick(flick, item) {
