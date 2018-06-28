@@ -41,16 +41,23 @@ class App {
   }
 
   renderItem(flick) {
-    const item = document.createElement ('li')
-    item.classList.add('flick')
-  
-    const properties = Object.keys(flick)
+     const item = document.createElement('li')
+     item.classList.add('flick')
+    
+    
+     const properties = Object.keys(flick)
+   
+     properties.forEach((propertyName) => {
+   
+     const span = this.renderProperty(propertyName, flick[propertyName])
+          item.appendChild(span)
+        })
+   
+     const actions = this.renderActionButtons(flick, item)
+     item.appendChild(actions)
 
-    properties.forEach((propertyName) => {
-      const span = this.renderProperty(propertyName, flick[propertyName])
-      item.appendChild(span)
-    })
-
+     return item
+      }
 
   toggleFavorite(flick, item) {
     flick.favorite = item.classList.toggle('fav')
