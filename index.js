@@ -21,7 +21,7 @@ class App {
 
     const deleteButton = document.createElement('button')
     deleteButton.classList.add('remove')
-      deleteButton.textContent = 'Delete'
+    deleteButton.innerHTML = '<i class="far fa-trash-alt" title="remove flick"></i>'
       deleteButton
       .addEventListener (
         'click',
@@ -31,7 +31,7 @@ class App {
 
       const favButton = document.createElement('button')
       favButton.classList.add('fav')
-      favButton.textContent = 'Favorite'
+      favButton.innerHTML = '<i class="fas fa-star" title="toggle favorite"></i>'
       favButton.addEventListener('click', (_ev) => this.toggleFavorite(flick, item)
       )
       actions.appendChild(favButton)
